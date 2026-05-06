@@ -37,9 +37,9 @@ Same data. Better framing. Executable recipes.
 
 The skills are the playbook. The MCP is the data access layer. Together they let Claude function as a senior CRO analyst working against your live site data — not just giving advice, but pulling the actual numbers.
 
-## What's in this release
+## Skills
 
-### Foundation skills
+### Foundation
 
 | Skill | Purpose |
 |-------|---------|
@@ -48,7 +48,7 @@ The skills are the playbook. The MCP is the data access layer. Together they let
 | `cro-philosophy` | Gator/Judge psychology (Kahneman System 1/2), Five Pillars, Stroop Test, "95% Gator," confirmation bias, Ch 12 redesign empirical data, 2 MCP recipes |
 | `quadrants-of-traffic` | The four-Quadrant segmentation framework using native `new_user`/`returning_user`/`device` filters — natively queryable, no post-hoc joins required. 4 MCP recipes |
 
-### Analysis playbooks
+### Analysis playbooks (book → data)
 
 | Skill | Purpose |
 |-------|---------|
@@ -58,7 +58,7 @@ The skills are the playbook. The MCP is the data access layer. Together they let
 | `popup-strategy` | HVLI vs LVHI modes, three popup structures, four offer types, four trigger types, 8-second rule, Perfect Popup template, 4 MCP recipes |
 | `funnel-and-journey-diagnostics` | Worst-drop step identification, revenue opportunity calculation, journey continuation analysis, Quadrant-stratified funnel comparison, 5 MCP recipes |
 
-### Methodology skills
+### Methodology
 
 | Skill | Purpose |
 |-------|---------|
@@ -66,9 +66,11 @@ The skills are the playbook. The MCP is the data access layer. Together they let
 | `split-test-interpretation` | Four test structure types (Standard A/B, MVT, URL Redirect, Reverse A/B, Live Testing), nine mistakes, ICE, Do No Harm, Blanket vs. Targeted, 3 MCP recipes |
 | `experiment-design-and-prioritization` | ICE scoring with BDF-grounded inputs, hypothesis writing, test design checklist, MDE calculation, Do No Harm guardrail, 3 MCP recipes |
 
-Each skill includes the book's theory, the MCP execution recipes (which tool, which args, expected output, interpretation), decision rules, gotchas, and cross-references to related skills.
+Each skill includes book theory, MCP execution recipes (tool, args, expected output, interpretation), decision rules, gotchas, and cross-references.
 
-> **Open review flags (needs Dylan):** RPV metric framing (Experimental sidebar in `heatmap-metrics-literacy`); Quadrant benchmark table derived cells in `quadrants-of-traffic`; "never host on YouTube" scope beyond VSLs in `landing-page-evaluation`.
+> **Open review flags (needs Dylan):** RPV metric status — is it a named Heatmap UI metric or a derived concept? (Experimental sidebar in `heatmap-metrics-literacy`.) Does "never host on YouTube" apply only to VSLs or to all video on landing pages? (`landing-page-evaluation`.)
+
+See `SKILL_TEMPLATE.md` in the repo root for the canonical structure all skills follow.
 
 ## Installation
 
@@ -120,11 +122,21 @@ The frameworks encoded in these skills come from *Billion Dollar Websites: Lesso
 
 The skills operationalize the book's frameworks and bind them to the Heatmap MCP's data surface. They do not reproduce the book's prose. If you want the full reasoning, the case studies, and the founder's voice behind the methodology, [read the book](https://billiondollarwebsites.com).
 
+## Roadmap (v0.2)
+
+- **Resolve open Dylan flags** — RPV canonical status; YouTube-scope clarification
+- **Split `heatmap-data-model`** — separate the 13-tool reference from the 7 recipes to reduce per-conversation load cost
+- **Update cross-references** — `popup-strategy`, `customer-research-bdf`, `funnel-and-journey-diagnostics`, and `experiment-design-and-prioritization` aren't yet referenced from the original seven skills
+- **Audit the four newer skills** for the same quality bar as the original seven (tighter gotchas, worked examples)
+- **Add `CHANGELOG.md`** and tag `v0.1.0` / `v0.2.0` in git
+
 ## Contributing
 
-Issues and pull requests are welcome. The skills are versioned, opinionated, and encode a specific methodology — proposed changes should align with the frameworks in *Billion Dollar Websites* or articulate clearly why a deviation is warranted.
+Issues and pull requests are welcome. The skills encode a specific methodology — proposed changes should align with the frameworks in *Billion Dollar Websites* or explain clearly why a deviation is warranted.
 
-If you're a Heatmap customer with feedback on how the skills perform against your real questions, that's the highest-signal contribution. Open an issue with the question, the skill that fired (or didn't), and the response you got.
+Use `SKILL_TEMPLATE.md` as the starting point for any new skill. The template codifies the required sections (Purpose / Core Framework / MCP Recipes / Decision Rules / Gotchas / Cross-References / eBook Team Flags).
+
+If you're a Heatmap customer with feedback on how the skills perform against real questions, that's the highest-signal contribution. Open an issue with the question, the skill that fired (or didn't), and the response you got.
 
 ## License
 
